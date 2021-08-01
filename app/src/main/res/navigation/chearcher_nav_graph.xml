@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/createCheacherAccountFragment">
+
+    <fragment
+        android:id="@+id/createCheacherAccountFragment"
+        android:name="com.ecomm.sciproapplication.views.teacher.fragment.createAccount.CreateCheacherAccountFragment"
+        android:label="create_cheacher_account_fragment"
+        tools:layout="@layout/create_cheacher_account_fragment" >
+        <action
+            android:id="@+id/action_createCheacherAccountFragment_to_createTeacherAccountFragment2"
+            app:destination="@id/createTeacherAccountFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/defineProgramFragment"
+        android:name="com.ecomm.sciproapplication.views.teacher.fragment.programm.DefineProgramFragment"
+        android:label="define_program_fragment"
+        tools:layout="@layout/define_program_fragment" >
+        <argument android:name="Schoolid"
+            app:argType="string" />
+        <argument android:name="classId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/createTeacherAccountFragment2"
+        android:name="com.ecomm.sciproapplication.views.teacher.fragment.createAccount.CreateTeacherAccountFragment2"
+        android:label="fragment_create_teacher_account2"
+        tools:layout="@layout/fragment_create_teacher_account2" >
+        <action
+            android:id="@+id/action_createTeacherAccountFragment2_to_selectYourClassFragment"
+            app:destination="@id/selectYourClassFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectYourClassFragment"
+        android:name="com.ecomm.sciproapplication.views.teacher.fragment.selectClass.SelectYourClassFragment"
+        android:label="select_your_class_fragment"
+        tools:layout="@layout/select_your_class_fragment" >
+        <argument
+            android:name="schoolId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_selectYourClassFragment_to_defineProgramFragment"
+            app:destination="@id/defineProgramFragment" />
+    </fragment>
+</navigation>

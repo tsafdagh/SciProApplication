@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/student_nav_graph"
+    app:startDestination="@id/createStudentAccountFragment">
+
+    <fragment
+        android:id="@+id/createStudentAccountFragment"
+        android:name="com.ecomm.sciproapplication.views.student.CreateStudentAccountFragment"
+        android:label="create_student_account_fragment"
+        tools:layout="@layout/create_student_account_fragment" >
+        <action
+            android:id="@+id/action_createStudentAccountFragment_to_schoolAndClassFragment"
+            app:destination="@id/schoolAndClassFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/schoolAndClassFragment"
+        android:name="com.ecomm.sciproapplication.views.student.fragments.schoolAndClass.SchoolAndClassFragment"
+        android:label="school_and_class_fragment"
+        tools:layout="@layout/school_and_class_fragment" />
+    <fragment
+        android:id="@+id/classProgramFragment"
+        android:name="com.ecomm.sciproapplication.views.student.fragments.classProgramm.ClassProgramFragment"
+        android:label="class_program_fragment"
+        tools:layout="@layout/class_program_fragment" />
+</navigation>

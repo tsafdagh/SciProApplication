@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/shape_bottom_sheet"
+    android:padding="@dimen/dimen_12dp"
+    app:behavior_hideable="false"
+    app:behavior_peekHeight="0dp"
+    app:cardCornerRadius="15dp"
+    app:cardElevation="8dp"
+    app:layout_behavior="com.kola.kolawallet.ui.createTransaction.helpersClass.LockedBottomSheetBehavior"
+    tools:context=".views.teacher.fragment.createAccount.BottomSheet.schoolBtmSheet.SchoolBottomSheetFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/id_school_rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/dim_8dp"
+        tools:listitem="@layout/row_item_school_item" />
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.SelectProfilActivity.SelectProfilActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/select_your_profile_and_create_account"
+        android:gravity="center"
+        android:textSize="@dimen/dimen_18sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/id_idstudent_opetion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <ProgressBar
+        android:id="@+id/id_progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/id_idstudent_opetion"
+        app:layout_constraintVertical_bias="0.8"
+        />
+
+    <TextView
+        android:id="@+id/id_idstudent_opetion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/student"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:background="@color/blue_sci"
+        android:paddingVertical="@dimen/dim_8dp"
+        android:layout_marginHorizontal="@dimen/dimen_18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.4"/>
+
+    <TextView
+        android:id="@+id/id_chearcher_profil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/cheacher"
+        android:gravity="center"
+        android:textSize="24sp"
+        android:paddingVertical="@dimen/dim_8dp"
+        android:background="@color/blue_sci"
+        android:layout_marginHorizontal="@dimen/dimen_18dp"
+        android:layout_marginTop="@dimen/dim_25dp"
+        app:layout_constraintTop_toBottomOf="@+id/id_idstudent_opetion" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.teacher.fragment.createAccount.CreateCheacherAccountFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/id_user_studentprofil_tool_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
+            app:title="@string/teacher_info"
+            app:titleTextColor="@color/red_sci" />
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_12dp"
+            app:layout_constraintTop_toBottomOf="@+id/id_user_studentprofil_tool_bar">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/id_uer_image_profil"
+                        android:layout_width="@dimen/diment_130dp"
+                        android:layout_height="@dimen/diment_130dp"
+                        android:layout_gravity="center_horizontal"
+                        android:padding="@dimen/dim_6dp"
+                        android:src="@drawable/circle_account"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <ProgressBar
+                        android:id="@+id/id_imag_progess"
+                        android:layout_width="@dimen/dim_42dp"
+                        android:layout_height="@dimen/dim_42dp"
+                        android:indeterminateTint="@color/colorAccent"
+                        app:layout_constraintBottom_toBottomOf="@+id/id_uer_image_profil"
+                        app:layout_constraintEnd_toEndOf="@+id/id_uer_image_profil"
+                        app:layout_constraintStart_toStartOf="@+id/id_uer_image_profil"
+                        app:layout_constraintTop_toTopOf="@+id/id_uer_image_profil" />
+
+                    <TextView
+                        android:id="@+id/id_click_to_define"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dimen_3dp"
+                        android:text="@string/click_to_define"
+                        app:layout_constraintBottom_toBottomOf="@+id/id_imag_progess"
+                        app:layout_constraintEnd_toEndOf="@+id/id_imag_progess"
+                        app:layout_constraintStart_toStartOf="@+id/id_imag_progess"
+                        app:layout_constraintTop_toTopOf="@+id/id_imag_progess" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/id_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/name"
+                        android:textColor="@color/blue_sci_v1" />
+
+                    <EditText
+                        android:id="@+id/id_surname"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_12dp"
+                        android:hint="@string/first_name"
+                        android:textColor="@color/blue_sci_v1" />
+
+                    <EditText
+                        android:id="@+id/id_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_12dp"
+                        android:hint="@string/fui_email_hint"
+                        android:textColor="@color/blue_sci" />
+                    <EditText
+                        android:id="@+id/id_matricule"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_12dp"
+                        android:hint="@string/matricule"
+                        android:textColor="@color/blue_sci" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dim_30dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Schools and classes"
+                        android:textColor="@color/red_sci"
+                        android:textSize="@dimen/dimen_18sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dim_16dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/id_select_your_school"
+                            android:layout_width="@dimen/dim_30dp"
+                            android:layout_height="@dimen/dim_30dp"
+                            android:layout_marginStart="@dimen/dimen_12dp"
+                            android:padding="@dimen/dim_6dp"
+                            android:background="@drawable/circular_shape_programm"
+                            android:src="@drawable/ic_baseline_add_24" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dim_30dp"
+                            android:text="@string/select_your_school" />
+
+                    </LinearLayout>
+
+                    <ListView
+                        android:id="@+id/id_selected_scholls"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_12dp"/>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/id_next_button"
+                    android:layout_width="@dimen/dimen_200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_12dp"
+                    android:background="@color/blue_sci"
+                    android:text="@string/next"
+                    android:layout_gravity="center"
+                    android:textColor="@color/white"
+                    android:layout_marginBottom="@dimen/dimen_80dp"/>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <ProgressBar
+            android:id="@+id/id_creation_loading"
+            android:layout_width="@dimen/dimen_70dp"
+            android:layout_height="@dimen/dimen_70dp"
+            android:layout_gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <include layout="@layout/layout_bottomsheet_img" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
