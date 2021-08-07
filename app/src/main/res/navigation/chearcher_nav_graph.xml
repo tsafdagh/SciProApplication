@@ -23,6 +23,9 @@
             app:argType="string" />
         <argument android:name="classId"
             app:argType="string" />
+        <action
+            android:id="@+id/action_defineProgramFragment_to_coursesFragment"
+            app:destination="@id/coursesFragment" />
     </fragment>
     <fragment
         android:id="@+id/createTeacherAccountFragment2"
@@ -44,5 +47,18 @@
         <action
             android:id="@+id/action_selectYourClassFragment_to_defineProgramFragment"
             app:destination="@id/defineProgramFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/coursesFragment"
+        android:name="com.ecomm.sciproapplication.views.teacher.fragment.courses.CoursesFragment"
+        android:label="courses_fragment"
+        tools:layout="@layout/courses_fragment" >
+        <argument android:name="Schoolid"
+            app:argType="string" />
+        <argument android:name="classId"
+            app:argType="string" />
+        <argument
+            android:name="currentProgram"
+            app:argType="com.ecomm.sciproapplication.entities.programElement.ProgramEntity" />
     </fragment>
 </navigation>

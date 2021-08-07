@@ -44,4 +44,5 @@
     <string name="chapter_intitulate">Chapter intitulate</string>
     <string name="chpater_description">Chapter description</string>
     <string name="enter_initulate">Enter the intitulate</string>
+    <string name="no_course_avalaible">No available course</string>
 </resources>

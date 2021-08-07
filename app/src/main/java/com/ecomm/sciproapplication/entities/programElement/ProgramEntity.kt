@@ -1,5 +1,6 @@
 package com.ecomm.sciproapplication.entities.programElement
 
+import java.io.Serializable
 import java.util.*
 
 data class ProgramEntity(
@@ -9,7 +10,7 @@ data class ProgramEntity(
     var saveAt: Date,
     var teacherId: String,
     var schoolId: String
-) {
+):Serializable {
     var numberOfPart:Int = 0
     var startAt:Int = 0
 

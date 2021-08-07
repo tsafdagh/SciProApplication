@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ecomm.sciproapplication.R
 import com.ecomm.sciproapplication.entities.classes.Classes
@@ -90,7 +91,7 @@ class DefineProgramFragment : Fragment() {
 
     private fun showDataIntoList(data: MutableList<ProgramEntity>?) {
 
-        data?.let {chapterlist->
+        data?.let { chapterlist ->
             val chapters = chapterlist.distinctBy { it.programTitle }
 
             id_number_ofChapter.text = "${chapters.size} ${getString(R.string.Chapters)}"
@@ -100,11 +101,26 @@ class DefineProgramFragment : Fragment() {
                 layoutManager = LinearLayoutManager(requireContext())
                 adapter = GroupAdapter<ViewHolder>().apply {
                     add(section)
+                    setOnItemClickListener { item, view ->
+
+                        if (item is ProgramItem) {
+                            navigateToCoursesView(item.program)
+                        }
+                    }
                 }
 
             }
 
         }
+    }
+
+    private fun navigateToCoursesView(program: ProgramEntity) {
+        val action = DefineProgramFragmentDirections.actionDefineProgramFragmentToCoursesFragment(
+            viewModel.schoolId,
+            viewModel.classId,
+            program
+        )
+        Navigation.findNavController(requireView()).navigate(action)
     }
 
     private fun anErrorOccured(throwable: Throwable) {
@@ -122,7 +138,7 @@ class DefineProgramFragment : Fragment() {
 
                 }
                 is DataState.Success -> {
-                    classdataState.data?.let { classList->
+                    classdataState.data?.let { classList ->
                         showClassIntoSpinner(classList)
                     }
                 }
@@ -138,7 +154,7 @@ class DefineProgramFragment : Fragment() {
         })
 
 
-        viewModel.saveProgramObserver.observe(viewLifecycleOwner, Observer { programEntity->
+        viewModel.saveProgramObserver.observe(viewLifecycleOwner, Observer { programEntity ->
             viewModel.allProgram.add(programEntity)
             loadProgramm()
 
@@ -161,22 +177,23 @@ class DefineProgramFragment : Fragment() {
 
         id_classes_sci_spinner.adapter = adapter
 
-        id_classes_sci_spinner.onItemSelectedListener =  object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(
-                parent: AdapterView<*>?,
-                view: View?,
-                position: Int,
-                id: Long
-            ) {
-                viewModel.classId =id_classes_sci_spinner.selectedItem.toString()
-                loadProgramm()
+        id_classes_sci_spinner.onItemSelectedListener =
+            object : AdapterView.OnItemSelectedListener {
+                override fun onItemSelected(
+                    parent: AdapterView<*>?,
+                    view: View?,
+                    position: Int,
+                    id: Long
+                ) {
+                    viewModel.classId = id_classes_sci_spinner.selectedItem.toString()
+                    loadProgramm()
+                }
+
+                override fun onNothingSelected(parent: AdapterView<*>?) {
+
+                }
+
             }
-
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-
-            }
-
-        }
     }
 
     private fun configureOnCLickListener() {
