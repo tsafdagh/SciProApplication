@@ -45,4 +45,8 @@
     <string name="chpater_description">Chapter description</string>
     <string name="enter_initulate">Enter the intitulate</string>
     <string name="no_course_avalaible">No available course</string>
+    <string name="course_intitulate">Course intitulate</string>
+    <string name="cancel">Cancel</string>
+    <string name="create_a_course">Create a course</string>
+    <string name="select_pdf_course">Select PDF</string>
 </resources>

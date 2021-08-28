@@ -19,6 +19,10 @@ import com.google.android.material.snackbar.Snackbar
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.math.round
+import android.provider.OpenableColumns
+
+
+
 
 
 private const val TAG = "Extentions"
@@ -391,4 +395,29 @@ fun Context.makeCall(number: String): Boolean {
     }
 }
 
+
+
+fun Uri.getFileName(context: Context): String? {
+    var result: String? = null
+    if (this.scheme.equals("content")) {
+        val cursor =context.contentResolver.query(this, null, null, null, null)
+        try {
+            if (cursor != null && cursor.moveToFirst()) {
+                result = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME))
+            }
+        } finally {
+            cursor!!.close()
+        }
+    }
+    if (result == null) {
+        result = this.path
+        val cut = result?.lastIndexOf('/')
+        if (cut != -1) {
+            if (cut != null) {
+                result = result?.substring(cut + 1)
+            }
+        }
+    }
+    return result
+}
 
